@@ -1,0 +1,71 @@
+@import './variables.less';
+
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  width: 100vw;
+  height: 100vh;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  line-height: 1.25;
+  position: relative;
+  font-size: 100%;
+  text-size-adjust: 0.5;
+  font-family: @defaultFont;
+  background-color: @defaultBackgroundColor;
+  color: @defaultFontColor_light;
+}
+
+a,
+a:active,
+a:hover {
+  outline: 0;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+img {
+  border: 0;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+.header {
+  padding-top: 40px;
+}
+
+.text-align {
+  text-align: center;
+}
+
+.paragraph {
+  padding-top: 40px;
+}
+
+.game-box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 60px;
+}

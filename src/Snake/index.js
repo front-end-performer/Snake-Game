@@ -1,5 +1,6 @@
 import Block from '../Block/index';
-import * as obj from '../js/index';
+import * as func from '../js/index';
+import * as obj from '../Apple/index';
 
 // The Snake constructor
 export default class Snake {
@@ -43,7 +44,7 @@ Snake.prototype.move = function () {
     }
 
     if (this.checkCollision(newHead)) {
-        obj.gameOver();
+        func.gameOver();
         return;
     }
 
@@ -61,8 +62,8 @@ Snake.prototype.move = function () {
 Snake.prototype.checkCollision = function (head) {
     const leftCollision = (head.col === 0);
     const topCollision = (head.row === 0);
-    const rightCollision = (head.col === obj.widthInBlocks - 1);
-    const bottomCollision = (head.row === obj.heightInBlocks - 1);
+    const rightCollision = (head.col === func.widthInBlocks - 1);
+    const bottomCollision = (head.row === func.heightInBlocks - 1);
 
     const wallCollision = leftCollision || topCollision || rightCollision || bottomCollision;
 
@@ -91,3 +92,5 @@ Snake.prototype.setDirection = function (newDirection) {
 
     this.nextDirection = newDirection;
 };
+
+export const snake = new Snake();

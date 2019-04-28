@@ -19,3 +19,5 @@ Apple.prototype.move = function () {
   let randomRow = Math.floor(Math.random() * (heightInBlocks - 2)) + 1;
   this.position = new Block(randomCol, randomRow);
 };
+
+export const apple = new Apple();

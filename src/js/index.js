@@ -1,6 +1,6 @@
 import '../styles/styles.less';
-import Snake from '../Snake/index';
-import Apple from '../Apple/index';
+import * as objSnake from '../Snake/index';
+import * as objApple from '../Apple/index';
 
 
 
@@ -27,7 +27,7 @@ const drawBorder = function () {
 
 export const drawScore = function () {
     const scr = document.getElementById("score");
-    scr.innerText= snake.score;
+    scr.innerText= objSnake.snake.score;
 };
 
 // Clear the interval and display Game Over
@@ -52,17 +52,13 @@ export const circle = function (x, y, radius, fillCircle) {
 };
 
 
-// Create the snake and apple objects
-const snake = new Snake();
-export const apple = new Apple();
-
 // an animation function to setInterval
 const intervalId = setInterval(function () {
     ctx.clearRect(0, 0, width, height);
     drawScore();
-    snake.move();
-    snake.draw();
-    apple.draw();
+    objSnake.snake.move();
+    objSnake.snake.draw();
+    objApple.apple.draw();
     drawBorder();
 }, 100);
 
@@ -77,7 +73,7 @@ const directions = {
 window.addEventListener("keydown", (event) => {
     const newDirection = directions[event.keyCode];
     if (newDirection !== undefined) {
-        snake.setDirection(newDirection);
+        objSnake.snake.setDirection(newDirection);
     }
 });
 

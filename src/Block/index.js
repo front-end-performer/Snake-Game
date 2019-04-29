@@ -24,7 +24,9 @@ Block.prototype.drawCircle = function (color) {
   circle(centerX, centerY, blockSize / 2, true);
 };
 
+
 // Check if this block is in the same location as another block
 Block.prototype.equal = function (otherBlock) {
   return this.col === otherBlock.col && this.row === otherBlock.row;
 };
+

@@ -10,6 +10,7 @@ export default class Snake {
             new Block(6, 5),
             new Block(5, 5)
         ];
+
         // Set score to 0
         this.score = 0;
 
@@ -22,6 +23,19 @@ export default class Snake {
 Snake.prototype.draw = function () {
     for (let i = 0; i < this.segments.length; i++) {
         this.segments[i].drawSquare("#17a2b8");
+    
+        // add colors to eah segment
+        // let isEvenSegment = false;
+
+        // for (let i = 1; i < this.segments.length; i++) {
+        //     if (isEvenSegment) {
+        //         this.segments[i].drawSquare("Blue");
+        //     } else {
+        //         this.segments[i].drawSquare("Yellow");
+        //     }
+
+        //     isEvenSegment = !isEvenSegment; // следующий сегмент будет нечетным
+        // }
     }
 };
 
@@ -29,7 +43,7 @@ Snake.prototype.draw = function () {
 Snake.prototype.move = function () {
     const head = this.segments[0];
     let newHead;
-    
+
 
     this.direction = this.nextDirection;
 
@@ -67,7 +81,7 @@ Snake.prototype.checkCollision = function (head) {
 
     const wallCollision = leftCollision || topCollision || rightCollision || bottomCollision;
 
-    const selfCollision = false;
+    let selfCollision = false;
 
     for (let i = 0; i < this.segments.length; i++) {
         if (head.equal(this.segments[i])) {

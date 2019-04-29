@@ -11,6 +11,8 @@ export const ctx = canvas.getContext("2d");
 export const width = canvas.width;
 export const height = canvas.height;
 
+
+
 export const blockSize = 10;
 export const widthInBlocks = width / blockSize;
 export const heightInBlocks = height / blockSize;

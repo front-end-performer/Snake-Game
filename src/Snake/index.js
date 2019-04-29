@@ -66,7 +66,7 @@ Snake.prototype.move = function () {
 
     if (newHead.equal(obj.apple.position)) {
         this.score++;
-        obj.apple.move();
+        obj.apple.move(this.segments);
     } else {
         this.segments.pop();
     }

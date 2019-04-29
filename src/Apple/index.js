@@ -14,10 +14,17 @@ Apple.prototype.draw = function () {
 };
 
 // Move the apple to a new random location
-Apple.prototype.move = function () {
+Apple.prototype.move = function (occupBlocks) {
   let randomCol = Math.floor(Math.random() * (widthInBlocks - 2)) + 1;
   let randomRow = Math.floor(Math.random() * (heightInBlocks - 2)) + 1;
   this.position = new Block(randomCol, randomRow);
+
+  for (let i = 0; i < occupBlocks.length; i++) {
+    if (this.position.equal(occupBlocks[i])) {
+      this.move(occupBlocks); 
+      return;
+    }
+  }
 };
 
 export const apple = new Apple();
